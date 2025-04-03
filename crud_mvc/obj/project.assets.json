@@ -1,36 +1,38 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    ".NETFramework,Version=v8.0": {},
+    ".NETFramework,Version=v8.0/win7-x86": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0": []
+    ".NETFramework,Version=v8.0": []
   },
   "packageFolders": {
-    "/home/codespace/.nuget/packages/": {}
+    "C:\\Users\\GAGIREES2501\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/crud-mvc/crud_mvc/crud_mvc.csproj",
+      "projectUniqueName": "C:\\DEVELOPMENT\\gaya\\crud-mvc\\crud_mvc\\crud_mvc.csproj",
       "projectName": "crud_mvc",
-      "projectPath": "/workspaces/crud-mvc/crud_mvc/crud_mvc.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/crud-mvc/crud_mvc/obj/",
+      "projectPath": "C:\\DEVELOPMENT\\gaya\\crud-mvc\\crud_mvc\\crud_mvc.csproj",
+      "packagesPath": "C:\\Users\\GAGIREES2501\\.nuget\\packages\\",
+      "outputPath": "C:\\DEVELOPMENT\\gaya\\crud-mvc\\crud_mvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\GAGIREES2501\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net80": {
           "projectReferences": {}
         }
       },
@@ -38,36 +40,16 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48",
-          "net481"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+      "net80": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.418\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
       }
     }
   }
