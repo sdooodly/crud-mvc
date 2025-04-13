@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using crud_mvc.Models;
+using System.Linq;
 
 namespace crud_mvc.Services
 {
     public class PersonService
     {
-        private static List<Person> _people = new List<Person>();
-        private static int _nextId = 1;
+        private static List<Person> _people = new List<Person>()
+        {
+            new Person { Id = 1, Name = "gaya", Email = "gayaa@example.com", PhoneNumber = "123-456-7890" },
+            new Person { Id = 2, Name = "che", Email = "gu@example.com", PhoneNumber = "987-654-3210" }
+        };
+        private static int _nextId = 3;
+
         public List<Person> GetAll()
         {
             return _people;

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model IEnumerable<crud_mvc.Models.Person>
+
+@{
+    ViewData["Title"] = "People List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Email</td>
+                <td>@person.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
