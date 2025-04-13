@@ -1,13 +1,30 @@
-﻿@{
-    Layout = "_Layout";
-}
-@model IEnumerable<crud_mvc.Models.Person>
+﻿@model IEnumerable<crud_mvc.Models.Person>
 
 @{
     ViewData["Title"] = "People List";
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<style>
+    .table tbody tr {
+        background-color: #f5f5dc; /* Pale brown color */
+    }
+    /* Add some subtle borders for better definition */
+    .table th, .table td {
+        border: 1px solid #ddd; 
+        padding: 8px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse; 
+    }
+</style>
 
 <table class="table">
     <thead>

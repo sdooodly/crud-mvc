@@ -34,11 +34,11 @@ namespace crud_mvc.Controllers
             if (ModelState.IsValid)
             {
                 _personService.Add(person);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index"); 
             }
-            return View(person);
-        }
+            return View(person); 
 
+        }
         public IActionResult Edit(int id)
         {
             var person = _personService.GetById(id);

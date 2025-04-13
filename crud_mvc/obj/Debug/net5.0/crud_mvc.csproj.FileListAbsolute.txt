@@ -39,3 +39,4 @@ C:\DEVELOPMENT\gaya\crud-mvc\crud_mvc\obj\Debug\net5.0\ref\crud_mvc.dll
 C:\DEVELOPMENT\gaya\crud-mvc\crud_mvc\obj\Debug\net5.0\crud_mvc.pdb
 C:\DEVELOPMENT\gaya\crud-mvc\crud_mvc\obj\Debug\net5.0\crud_mvc.genruntimeconfig.cache
 C:\DEVELOPMENT\gaya\crud-mvc\crud_mvc\obj\Debug\net5.0\crud_mvc.csproj.CopyComplete
+C:\DEVELOPMENT\gaya\crud-mvc\crud_mvc\obj\Debug\net5.0\Razor\Views\People\Create.cshtml.g.cs
