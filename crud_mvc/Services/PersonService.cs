@@ -1,48 +1,49 @@
 ﻿using System.Collections.Generic;
-using crud_mvc.Models;
 using System.Linq;
+using crud_mvc.Models;
+using crud_mvc.Data; 
 
 namespace crud_mvc.Services
 {
     public class PersonService
     {
-        private static List<Person> _people = new List<Person>()
+        private readonly ApplicationDbContext _dbContext;
+
+        public PersonService(ApplicationDbContext dbContext)
         {
-            new Person { Id = 1, Name = "gaya", Email = "gayaa@example.com", PhoneNumber = "123-456-7890" },
-            new Person { Id = 2, Name = "che", Email = "gu@example.com", PhoneNumber = "987-654-3210" }
-        };
-        private static int _nextId = 3;
+            _dbContext = dbContext;
+        }
 
         public List<Person> GetAll()
         {
-            return _people;
+            return _dbContext.People.ToList();
         }
 
         public Person GetById(int id)
         {
-            return _people.FirstOrDefault(p => p.Id == id);
+            return _dbContext.People.Find(id);
         }
 
         public void Add(Person person)
         {
-            person.Id = _nextId++;
-            _people.Add(person);
+            _dbContext.People.Add(person);
+            _dbContext.SaveChanges(); // Important: This saves the changes to the database
         }
 
         public void Update(Person person)
         {
-            var existingPerson = _people.FirstOrDefault(p => p.Id == person.Id);
-            if (existingPerson != null)
-            {
-                existingPerson.Name = person.Name;
-                existingPerson.Email = person.Email;
-                existingPerson.PhoneNumber = person.PhoneNumber;
-            }
+            _dbContext.People.Update(person);
+            _dbContext.SaveChanges(); 
         }
 
         public void Delete(int id)
         {
-            _people.RemoveAll(p => p.Id == id);
+            var personToDelete = _dbContext.People.Find(id);
+            if (personToDelete != null)
+            {
+                _dbContext.People.Remove(personToDelete);
+                _dbContext.SaveChanges(); 
+            }
         }
     }
 }

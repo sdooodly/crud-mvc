@@ -39,6 +39,7 @@ namespace crud_mvc.Controllers
             return View(person); 
 
         }
+        
         public IActionResult Edit(int id)
         {
             var person = _personService.GetById(id);
@@ -46,7 +47,7 @@ namespace crud_mvc.Controllers
             {
                 return NotFound();
             }
-            return View(person);
+            return View(person); // Pass the person's data to the Edit view
         }
 
         [HttpPost]
@@ -55,11 +56,10 @@ namespace crud_mvc.Controllers
             if (ModelState.IsValid)
             {
                 _personService.Update(person);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index"); // Go back to the list after saving
             }
-            return View(person);
+            return View(person); // If there are validation errors, show the form again with errors
         }
-
         public IActionResult Delete(int id)
         {
             _personService.Delete(id);

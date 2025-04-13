@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using crud_mvc.Services; // Make sure this namespace matches
+using crud_mvc.Services;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using crud_mvc.Data;
 
 namespace crud_mvc
 {
@@ -21,7 +24,11 @@ namespace crud_mvc
         {
             services.AddControllersWithViews();
 
-            // Register your PersonService for dependency injection
+            // Register our ApplicationDbContext with EF Core and configure it to use SQLite
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Register our PersonService for dependency injection (it will now use the DbContext)
             services.AddScoped<PersonService>();
         }
 
