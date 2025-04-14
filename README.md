@@ -18,7 +18,7 @@ MVC is an architectural pattern and organizes the code into three distinct, inte
 
 This is a simple web application built with ASP.NET Core MVC that allows you to manage a list of people. It demonstrates the basic CRUD (Create, Read, Update, Delete) operations.  The data is stored in a SQLite database.
 
-![Screenshot of the application](crud_mvc/assets/screenshots/screenshot.png)
+![Screenshot of the application](crud_mvc/assets/screenshots/Screenshot.png)
 
 ## Features
 
