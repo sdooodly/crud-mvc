@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using crud_mvc.Models; // Make sure this namespace matches your Person model
+using crud_mvc.Models; 
 
-namespace crud_mvc.Data
+namespace crud_mvc.Data // to configure db
 {
     public class ApplicationDbContext : DbContext
     {

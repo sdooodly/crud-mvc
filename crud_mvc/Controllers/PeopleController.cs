@@ -8,22 +8,22 @@ using crud_mvc.Services;
 
 namespace crud_mvc.Controllers
 {
-    public class PeopleController : Controller
+    public class PeopleController : Controller //inherits from Controller class, part of MVC package???
     {
-        private readonly PersonService _personService;
+        private readonly PersonService _personService; //dependency injection here. uses instance of PersonService when PeopleController is created
 
-        public PeopleController(PersonService personService)
+        public PeopleController(PersonService personService) //constructor
         {
             _personService = personService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index() // see the name of ACTION METHOD. thats how it knows which view to call
         {
             var people = _personService.GetAll();
             return View(people);
         }
 
-        public IActionResult Create()
+        public IActionResult Create() // see the name of ACTION METHOD. thats how it knows which view to call
         {
             return View();
         }
@@ -34,20 +34,20 @@ namespace crud_mvc.Controllers
             if (ModelState.IsValid)
             {
                 _personService.Add(person);
-                return RedirectToAction("Index"); 
+                return RedirectToAction("Index");  //display
             }
             return View(person); 
 
         }
         
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int id) // see the name of ACTION METHOD. thats how it knows which view to call
         {
             var person = _personService.GetById(id);
             if (person == null)
             {
                 return NotFound();
             }
-            return View(person); // Pass the person's data to the Edit view
+            return View(person); 
         }
 
         [HttpPost]
@@ -58,7 +58,7 @@ namespace crud_mvc.Controllers
                 _personService.Update(person);
                 return RedirectToAction("Index"); // Go back to the list after saving
             }
-            return View(person); // If there are validation errors, show the form again with errors
+            return View(person); // If there are validation errors we show the form again with errors
         }
         public IActionResult Delete(int id)
         {
