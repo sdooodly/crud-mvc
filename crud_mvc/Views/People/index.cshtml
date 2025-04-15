@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<crud_mvc.Models.Person>
 
 @{
-    ViewData["Title"] = "People List";
+    ViewData["Title"] = "List of humans";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -12,9 +12,9 @@
 
 <style>
     .table tbody tr {
-        background-color: #f5f5dc; /* Pale brown color */
+        background-color: #f5f5dc; 
     }
-    /* Add some subtle borders for better definition */
+
     .table th, .table td {
         border: 1px solid #ddd; 
         padding: 8px;
@@ -31,22 +31,24 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone Number</th>
+            <th>Phone number</th>
+            <th>Fav language</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var person in Model)
         {
-            <tr>
-                <td>@person.Name</td>
-                <td>@person.Email</td>
-                <td>@person.PhoneNumber</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@person.Id"
-                       onclick="return confirm('Are you sure you want to delete @person.Name?');">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Email</td>
+            <td>@person.PhoneNumber</td>
+            <td>gaya test</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@person.Id"
+                   onclick="return confirm('Are you sure you want to delete @person.Name?');">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
